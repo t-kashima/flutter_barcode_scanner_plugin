@@ -8,9 +8,11 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /** FlutterBarcodeScannerPlugin */
 public class FlutterBarcodeScannerPlugin implements MethodCallHandler {
+  private static final String CHANNEL_NAME = "flutter_barcode_scanner_plugin";
+
   /** Plugin registration. */
   public static void registerWith(Registrar registrar) {
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "flutter_barcode_scanner_plugin");
+    final MethodChannel channel = new MethodChannel(registrar.messenger(), CHANNEL_NAME);
     channel.setMethodCallHandler(new FlutterBarcodeScannerPlugin());
   }
 
